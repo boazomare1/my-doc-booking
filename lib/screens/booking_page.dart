@@ -121,10 +121,13 @@ class _BookingPageState extends State<BookingPage> {
   }
 
   Widget _tableCalendar() {
+    DateTime dateToday = DateTime.now();
+    String date = dateToday.toString().substring(0, 4);
+    var year = int.parse(date);
     return TableCalendar(
       focusedDay: _focusDay,
       firstDay: DateTime.now(),
-      lastDay: DateTime(2023, 12, 31),
+      lastDay: DateTime(year, 12, 31),
       calendarFormat: _format,
       currentDay: _currentDay,
       rowHeight: 48,
